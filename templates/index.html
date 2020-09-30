@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission</title>
+</head>
+
+<body>
+
+    <div style="color:#fff">
+    <div class="car-form">
+	<form action="/predict" method="POST">
+            <h3>PREDICT YOUR CHANCES FOR ADMISSION</h3>
+            <p>GRE Score</p>
+            <input type="number" name="gre_score" class="entry-row" placeholder="Out of 340" required="required">
+            <p>TOEFL Score</p>
+            <input type="number" name="toefl_score" class="entry-row"  placeholder="Out of 120" required="required">
+            <p>University Rating</p>
+            <input type="number" name="university_rating" class="entry-row" placeholder="Out of 5" required="required">
+            <p>SOP Score</p>
+            <input type="number" name="sop" class="entry-row" placeholder="Out of 5" required="required">
+            <p>LOR Score</p>
+            <input type="number" name="lor" class="entry-row" placeholder="Out of 5" required="required">
+            <p>Undergraduate GPA</p>
+            <input type="number" name="cgpa" class="entry-row" placeholder="Out of 10" step="any" required="required">
+            <p>Research Experience</p>
+            <select name="research" id="research" required="required">
+                <option value="yes">YES</option>
+                <option value="no">NO</option>
+            </select>
+            <br><button id="sub" type="submit ">Predict</button>
+
+        </form>
+        <p>Chance for Admission is {{prediction}}%</p>
+<p><a style="color:blue" href="https://www.kaggle.com/mohansacharya/graduate-admissions" target="_blank">Click Here</a></p>
+    </div>
+
+    <style>
+        body {
+            background: url("/static/img/bg-img.jpeg");
+            background-size: cover;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .car-form{
+            position: absolute;
+            left:50%;
+	       top:50%;
+            width:400px;
+            hight:600px;
+	       -webkit-transform: translate(-50%,-50%);
+	       -moz-transform: translate(-50%,-50%);
+	       -ms-transform: translate(-50%,-50%);
+	       -o-transform: translate(-50%,-50%);
+	       transform: translate(-50%,-50%);
+            padding: 0px 10px;
+            background: rgba(0,0,0,0.4);
+            }
+
+        .car-form p{
+            margin: 22px 0 0 0;
+            padding:0;
+            font-weight:bold;
+            }
+
+        #research {
+            font-size: 18px;
+            width: 100px;
+            height: 23px;
+        }
+        
+        #research {
+            width: 255px;
+            height: 30px;
+            text-align: center;
+            border-radius: 10px;
+            font-size: 18px;
+        }
+        
+        #research:hover {
+            background-color: #395cc6;
+        }
+        
+        #sub {
+            margin-top:10px;
+            width: 120px;
+            height: 43px;
+            text-align: center;
+            border-radius: 10px;
+            font-size: 15px;
+            background-color: #0040ff;
+            color:#fff;
+        }
+        
+        
+        .entry-row {
+            border-radius: 10px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+
+    </style>
+    </div>
+</body>
+
+</html>
